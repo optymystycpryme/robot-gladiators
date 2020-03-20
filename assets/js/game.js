@@ -3,7 +3,9 @@ let playerHealth = 100;
 let playerAttack = 10;
 let playerMoney = 10;
 
-let enemyName = "Roboto";
+
+
+let enemyNames = ["Roboto", "Amy Android", "Robo Trumble"];
 let enemyHealth = 50;
 let enemyAttack = 12;
 
@@ -12,20 +14,19 @@ console.log(
   playerHealth,
   playerAttack,
   playerMoney + ' | ' +
-  enemyName,
+  enemyNames,
   enemyHealth,
   enemyAttack
 );
 
 window.alert(`The fight has begun, ${playerName}!`);
 
-const fight = () => {
+const fight = (enemyName) => {
 
   var promptFight = window.prompt(
     "Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose."
   );
   window.alert(`${promptFight} it is!!!`);
-  
   if (promptFight.toLowerCase() === "fight") {
 
     //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
@@ -71,4 +72,6 @@ const fight = () => {
     enemyAttack
   );
 }
-fight();
+for (let i = 0; i < enemyNames.length; i++) {
+  fight(enemyNames[i]);
+}
